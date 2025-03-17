@@ -1,6 +1,6 @@
 from django.db import models
 from .managers import PersonManager
-from apps.core.db.mixins import TimestampedModelMixin
+from backend.apps.core.db.mixins import TimestampedModelMixin
 
 
 class Person(TimestampedModelMixin, models.Model):

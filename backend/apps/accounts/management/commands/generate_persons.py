@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from faker import Faker
-from apps.accounts.models import Person
+from backend.apps.accounts.models import Person
 
 class Command(BaseCommand):
     help = 'Generate dummy data for the Person model'

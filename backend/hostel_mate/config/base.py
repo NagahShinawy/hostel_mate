@@ -43,7 +43,7 @@ THIRD_PARTY_APPS = [
 ]
 
 CUSTOM_APPS = [
-    "apps.accounts",
+    "backend.apps.accounts",
 ]
 INSTALLED_APPS += THIRD_PARTY_APPS + CUSTOM_APPS
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "hostel_mate.urls"
+ROOT_URLCONF = "backend.hostel_mate.urls"
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "hostel_mate.wsgi.application"
+WSGI_APPLICATION = "backend.hostel_mate.wsgi.application"
 
 
 # Database
