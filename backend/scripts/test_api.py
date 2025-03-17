@@ -37,7 +37,7 @@ def test_create_person():
         'age': 28,
         'city': 'Wonderland',
         'email': 'alice@example.com',
-        'phone': '123-456-7890'
+        'phone': '01278542103'
     }
     response = requests.post(BASE_URL, json=new_person)
     print_response(response)
@@ -51,7 +51,8 @@ def test_update_person(person_id):
         'age': 29,
         'city': 'Updated City',
         'email': 'alice.updated@example.com',
-        'phone': '987-654-3210'
+        # 'phone': '987-654-3210',
+        'phone': '123456781'
     }
     response = requests.put(f"{BASE_URL}{person_id}/", json=updated_person)
     print_response(response)
