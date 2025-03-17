@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+from corsheaders.defaults import default_headers
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,6 +28,11 @@ DEBUG = config('DEBUG', True)
 ALLOWED_HOSTS = []
 
 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React frontend in development
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "corsheaders",
 ]
 
 CUSTOM_APPS = [
@@ -47,6 +54,7 @@ CUSTOM_APPS = [
 ]
 INSTALLED_APPS += THIRD_PARTY_APPS + CUSTOM_APPS
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # Add this line
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

@@ -1,14 +1,15 @@
 from django.db import models
 from .managers import PersonManager
-from backend.apps.core.db.mixins import TimestampedModelMixin
+from backend.apps.core.db.mixins import TimestampedModelMixin, PhoneField
 
 
 class Person(TimestampedModelMixin, models.Model):
     name = models.CharField(max_length=100)
-    age = models.IntegerField()
+    age = models.PositiveSmallIntegerField()
     city = models.CharField(max_length=100)
     email = models.EmailField()
-    phone = models.CharField(max_length=15)
+    phone = PhoneField(unique=True)  # Use the custom field
+
     objects = PersonManager()
 
     def __str__(self):
